@@ -1,4 +1,8 @@
-:root { color-scheme: dark; }
+:root {
+  color-scheme: light dark;
+  --sub: #9fb3a4;
+  --accent: #57d992;
+}
 body {
   margin: 0;
   background: #0d100e;
@@ -6,4 +10,49 @@ body {
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   line-height: 1.7;
 }
-a { color: #57d992; }
+a { color: var(--accent); }
+
+/* ライトテーマ（端末設定に自動追従） */
+@media (prefers-color-scheme: light) {
+  :root {
+    --sub: #5f7263;
+    --accent: #1d9e5f;
+  }
+  body {
+    background: #f2f5f2;
+    color: #1d2620;
+  }
+}
+
+/* 手動指定（端末設定より優先） */
+:root[data-theme="light"] {
+  --sub: #5f7263;
+  --accent: #1d9e5f;
+}
+:root[data-theme="light"] body {
+  background: #f2f5f2;
+  color: #1d2620;
+}
+:root[data-theme="dark"] {
+  --sub: #9fb3a4;
+  --accent: #57d992;
+}
+:root[data-theme="dark"] body {
+  background: #0d100e;
+  color: #e6efe7;
+}
+
+/* テーマ切り替えボタン */
+.theme-toggle {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--sub);
+  background: transparent;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
