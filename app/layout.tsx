@@ -5,6 +5,19 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'WeFeeArtsNextLab',
   description: 'Next.js の実験場 — 試しに作る、試しに壊す。',
+  openGraph: {
+    title: 'WeFeeArtsNextLab',
+    description: 'Next.js の実験場 — 試しに作る、試しに壊す。',
+    url: 'https://akamaryuu.github.io/WeFeeArtsNextLab/',
+    type: 'website',
+    images: ['https://akamaryuu.github.io/WeFeeArtsHub/assets/ogp/nextlab.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WeFeeArtsNextLab',
+    description: 'Next.js の実験場 — 試しに作る、試しに壊す。',
+    images: ['https://akamaryuu.github.io/WeFeeArtsHub/assets/ogp/nextlab.jpg'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
